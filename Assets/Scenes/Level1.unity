@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 1018463046}
   - component: {fileID: 1018463045}
   - component: {fileID: 1018463044}
+  - component: {fileID: 1018463049}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -515,6 +516,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1018463049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018463043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e649abadb084a7cbd07574a71a09fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1486516444
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +540,7 @@ GameObject:
   - component: {fileID: 1486516447}
   - component: {fileID: 1486516446}
   - component: {fileID: 1486516445}
+  - component: {fileID: 1486516449}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -677,6 +691,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1486516449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486516444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a04bd1464c5434b8851e1a90e92796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  jumpHeight: 300
+  maxSpeed: 1000
 --- !u!1 &1490886653
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
@@ -7,11 +8,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 3;
     [SerializeField]
-    private float jumpHeight = 300;
+    private float jumpHeight = 350;
     [SerializeField]
-    private float maxSpeed = 1000;
+    private float maxSpeed = 6;
     private float x_input;
     Rigidbody2D rb;
+    public bool canJump;
     #endregion
 
     #region Gameplay_vars
@@ -36,6 +38,14 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Move();
+
+        if (Input.GetKeyDown(KeyCode.E)) {
+            Interact();
+        } else if (Input.GetKeyDown(KeyCode.Q)) {
+            // reset level 
+        } else if (Input.GetKeyDown(KeyCode.Tab)) {
+            // switch control to shadow
+        }
     }
 
     #region Movement_func
@@ -51,12 +61,12 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(-maxSpeed, rb.linearVelocity.y);
         }
 
-        if (Input.GetKeyDown(KeyCode.E)) {
-            Interact();
-        } else if (Input.GetKeyDown(KeyCode.Q)) {
-            // reset level 
-        } else if (Input.GetKeyDown(KeyCode.Tab)) {
-            // switch control to shadow
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Debug.Log("asdasd");
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && canJump) {
+            canJump = false;
+            rb.AddForce(new Vector2(0, jumpHeight));
         }
     }
     #endregion

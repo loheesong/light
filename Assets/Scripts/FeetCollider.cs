@@ -8,18 +8,16 @@ public class FeetCollider : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check to see if player hit the floor so they can get jump perms back
-        // GetComponentInParent<PlayerController>().canJump = isFloor(collision.gameObject);
         if (isFloor(collision.gameObject))
         {
-            GetComponentInParent<PlayerController>().canJump = true;
+            GetComponentInParent<CharacterController>().canJump = true;
         }
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
         if (isFloor(collision.gameObject)) {
-            GetComponentInParent<PlayerController>().canJump = false;
+            GetComponentInParent<CharacterController>().canJump = false;
         }
     }
 }

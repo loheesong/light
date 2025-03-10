@@ -1,7 +1,16 @@
+using Unity.VisualScripting;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
-public class ShadowController : MonoBehaviour
+public class ShadowController : CharacterController
 {
+    private float gravityDown = 1f;
+    private float gravityUp = -1f;
+
+    protected override void Awake() {
+        base.Awake();
+        rb.gravityScale = gravityUp;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,6 +20,8 @@ public class ShadowController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Move();
     }
+
+
 }

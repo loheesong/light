@@ -7,11 +7,6 @@ public class PlayerController : CharacterController
 {   
     #region Gameplay_vars
     private bool hasKey;
-    private bool isMovementEnabled = true;
-    public bool IsMovementEnabled {
-        get => isMovementEnabled;
-        set => isMovementEnabled = value;
-    }
     #endregion
 
     #region Animation
@@ -27,17 +22,15 @@ public class PlayerController : CharacterController
     // Update is called once per frame
     void Update()
     {
-        if (isMovementEnabled) {
+        if (GameManager.Instance.isPlayerActive) {
             Move();
         }
-        // Debug.Log("player");
+
         if (Input.GetKeyDown(KeyCode.E)) {
             Interact();
         } else if (Input.GetKeyDown(KeyCode.Q)) {
             // reset level 
-        } else if (Input.GetKeyDown(KeyCode.Tab)) {
-            // switch control to shadow
-        }
+        } 
     }
 
     #region Gameplay_func 

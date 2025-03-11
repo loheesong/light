@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
@@ -6,6 +7,11 @@ public class PlayerController : CharacterController
 {   
     #region Gameplay_vars
     private bool hasKey;
+    private bool isMovementEnabled = true;
+    public bool IsMovementEnabled {
+        get => isMovementEnabled;
+        set => isMovementEnabled = value;
+    }
     #endregion
 
     #region Animation
@@ -21,8 +27,10 @@ public class PlayerController : CharacterController
     // Update is called once per frame
     void Update()
     {
-        Move();
-
+        if (isMovementEnabled) {
+            Move();
+        }
+        // Debug.Log("player");
         if (Input.GetKeyDown(KeyCode.E)) {
             Interact();
         } else if (Input.GetKeyDown(KeyCode.Q)) {

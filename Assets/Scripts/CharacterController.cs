@@ -20,6 +20,7 @@ public class CharacterController : MonoBehaviour
 
     #region Movement_func
     protected void Move() {
+        // Debug.Log("moveeeee");
         x_input = Input.GetAxisRaw("Horizontal");
         rb.AddForce(new Vector2(x_input * moveSpeed, 0));
         // currDirection = new Vector2(x_input, 0);
